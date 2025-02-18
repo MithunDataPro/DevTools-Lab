@@ -45,11 +45,37 @@ int main() {
 ### Numeric Types
 Use **int** when you need to store a whole number without decimals, like 35 or 1000, and **float** or **double** when you need a floating point number (with decimals), like 9.99 or 3.14515.
 
-##### 1. int
+---
+
+**Bro Code Data Types Code**
 
 ```cpp
 #include <iostream>
 using namespace std;
 
-int main() {
+int main () {
 
+    // Whole Numbers
+    int age = 27;
+    
+    // double
+    double height = 5.11;
+
+    // char
+    char gender = 'M';
+    char earnings = '$';
+
+    // Boolean
+    bool fair = true;
+
+    // Strings
+    string firstname = "Mithun";
+    string lastname = "Dama";
+
+    cout << "Hello My First Name is " << firstname  << " and My age is " << age << " with height " << height <<"\n";
+    cout << "Hello My Last Name Is: " << lastname << "\n";
+
+    return 0;
+}
+
+```
