@@ -44,9 +44,33 @@ int main() {
 }
 
 ```
+---
+## Another Example:
+```cpp
+#include <iostream>
+using namespace std;
 
+int main() {
+
+    string name;
+
+    cout << "Enter your Name: ";
+    getline(cin,name);  
+    /* The getline() function in C++ is used to read an entire line of text,
+     including spaces, until a newline (\n) or a specified delimiter is found.*/
+    if (name.length() > 12) {
+        cout << "Your Name Can't be more than 12 characters";
+    }
+    else{
+        cout <<"Welcome " << name;
+    }
+    return 0;
+}
+
+```
 **or**
 
+```cpp
 #include <iostream>
 using namespace std;
 
@@ -62,4 +86,6 @@ int main() {
     return 0;
 }
 
+```
 ---
+
