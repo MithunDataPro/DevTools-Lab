@@ -1,4 +1,7 @@
 # While Loop:
+
+While Some Condition is True then you will continue to execute something.
+
 ```cpp
 #include <iostream>
 using namespace std;
