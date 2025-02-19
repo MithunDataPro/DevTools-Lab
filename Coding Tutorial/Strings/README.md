@@ -24,3 +24,42 @@ int main() {
 ```
 ----
 
+## 2. name.length() / name.size() – Get Length of String
+Returns the number of characters in the string.
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+
+    string name;
+
+    cout << "Enter your Name: ";
+    getline(cin,name);  
+    /* The getline() function in C++ is used to read an entire line of text,
+     including spaces, until a newline (\n) or a specified delimiter is found.*/
+    cout << name.length();
+    return 0;
+}
+
+```
+
+**or**
+
+#include <iostream>
+using namespace std;
+
+int main() {
+
+    string name;
+
+    cout << "Enter your Name: ";
+    getline(cin,name);  
+    /* The getline() function in C++ is used to read an entire line of text,
+     including spaces, until a newline (\n) or a specified delimiter is found.*/
+    cout << name.size();
+    return 0;
+}
+
+---
