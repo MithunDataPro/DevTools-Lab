@@ -107,3 +107,38 @@ double circle(double radius, double pie){
 ```
 
 ---
+## What is Function Overloading?
+Function overloading allows us to define multiple functions with the same name but different parameters. The compiler decides which function to call based on the number or type of arguments.
+
+**✅ Why use function overloading?**
+- To make the code cleaner and easier to read.
+- To perform similar operations with different data types or different numbers of parameters.
+
+
+
+```cpp
+// Overloaded Functions:
+#include <iostream>
+using namespace std;
+
+// Function Decoration
+void lunch();
+void lunch(string starter1, string starter2);
+
+int main()
+{
+
+lunch("Veg", "Non Veg");
+return 0;
+}
+
+void lunch() {
+    cout << "What Exactly You want me to serve: ";
+
+}
+void lunch(string starter1, string starter2){
+    cout << "What starter would you like to have " << starter1 << " or " << starter2;
+
+}
+
+```
