@@ -25,7 +25,7 @@ int main() {
 }
 
 ```
-## FUnction by Reading data from other function:
+## Function by Reading data from other function:
 
 ```cpp
 #include <iostream>
