@@ -68,3 +68,42 @@ void election(string state){  // We need to define data type with its name to re
 }
 
 ```
+# Return Functions:
+
+```cpp
+// return keyword:
+// return = return a value back to the spot where you called
+//          the encompassing function.
+
+#include <iostream>
+using namespace std;
+
+// Now lets find circumferance of a circle 
+
+double circle(double radius, double pie); // Now we chnaged void to double because of the o/p we need
+
+int main(){   // this is our main function
+
+    double radius;
+    double pie;
+    cout << "Enter the Radius: ";
+    cin >> radius;
+
+    cout << "Enter the value of Pie: ";
+    cin >> pie;
+
+    double result = circle(radius, pie);
+
+    cout << "Circumference of a circle is: " << circle << " Units";
+
+    return 0;
+
+}
+
+double circle(double radius, double pie){
+    return 2 * pie * radius;
+}
+
+```
+
+---
