@@ -81,3 +81,45 @@ int searchArray(int array[], int size, int element){
   }  // in programming -1 refers as centimental value. that means something is not found.
 
 ```
+
+### For Strings:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int searchArray(string array[], int size, string element);
+
+int main(){
+
+    std:: string heros[] ={"PSPK","Mahesh Babu","NTR","Prabhas_Raju","Ram Charan","Allu Arjun"};
+    int size = sizeof(heros)/sizeof(std::string);
+    int index;
+    std::string myhero;
+
+    std:: cout << "Enter Hero Name to search for who is Top Actor in TFI: ";
+    std::getline(cin , myhero);
+
+    index = searchArray(heros, size, myhero);
+
+    if(index != -1){
+        std:: cout << myhero << " Is at index " << index;
+    }
+    else{
+        std::cout << myhero << " Is not in array.";
+    }
+
+
+    return 0;
+}
+
+int searchArray(string array[], int size, string element){
+    for(int i=0; i < size; i++){
+        if(array[i] == element){
+            return i;
+        }
+    }
+    return -1;
+  }  // in programming -1 refers as centimental value. that means something is not found.
+
+```
