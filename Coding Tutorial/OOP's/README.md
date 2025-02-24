@@ -69,6 +69,64 @@ int main()
 
 Objects take up space in memory and have an associated address like a record in pascal or structure or union. When a program is executed the objects interact by sending messages to one another. Each object contains data and code to manipulate the data. Objects can interact without having to know details of each other’s data or code, it is sufficient to know the type of message accepted and the type of response returned by the objects.
 
+**My Version:**
+```cpp
+// Classes & Objects:
+
+#include <iostream>
+using namespace std;
+
+class Employees{
+    public:
+
+    string employeeName;
+    string occupation;
+    double salary;
+    int age;
+    char ranking;
+    bool male;
+
+    void work(){
+        cout << "This Employee's Work from Morning to Late Night \n";
+    }
+    void breaks(){
+        cout<< "This Employees Get Breaks in afternoon for Lunch \n";
+    }
+    void weekend(){
+        cout << "This Employee's Get Week off 2 days \n";
+    }
+};
+
+
+int main(){
+
+    Employees Employ1;
+    Employ1.employeeName = "Mithun";
+    Employ1.occupation = "Developer";
+    
+    Employ1.salary = 12.5;
+    
+    Employ1.ranking = 'A';
+    
+    Employ1.age= 27;
+    
+    Employ1.male = true;
+
+    cout << "Hello, " << Employ1.employeeName << " Dama You are Working as an " 
+    << Employ1.occupation << " With Hourly Salary as " << Employ1.salary 
+    << " $ and You Ranked as " << Employ1.ranking << " Grade Employee. With Age "
+    << Employ1.age << " Years Old. and Your an male which is " << Employ1.male << "\n";
+
+    Employ1.breaks();
+    Employ1.weekend();
+    Employ1.work();
+
+
+    return 0;
+}
+
+```
+
 ---
 
 ### Encapsulation:
