@@ -375,6 +375,132 @@ The capability of a class to derive properties and characteristics from another 
 
 ![image](https://github.com/user-attachments/assets/fca71d35-1bd6-46ed-ad76-591dd5c4b95a)
 
+**My Version**
+
+```cpp
+#include <iostream>
+#include<list>
+
+// Inheritance:
+/*
+ 
+*/
+
+
+class Startup {
+    private:    // We have Class Startup with 4 Private Properties.
+    std::string CompanyName;
+    std::string OwnerName;
+    int Investment;
+    std::list<std::string> BusinessFunction;
+
+    // Now if My Derived Class wants to access the above attributes the I can give Protected Access.
+    protected:
+    int Employee;
+
+    // Two Rules For Constructor:
+    // 1. Constructore Doesn't have Return type.
+    // 2. Constructor Name will be same as Class Name.
+
+// Constructor with three arguments or Parameters
+// Below Can Be Public:
+public:
+    Startup(std::string companyname, std::string ownername, int investment){
+        CompanyName = companyname;
+        OwnerName = ownername;
+        Investment  = investment;
+    }
+
+    // Instead of Repeating Our Execution We Can Use Class Methods.
+    // Below I ma Using an FUnction to execute my code
+
+    void getinfo(){
+        // Here we are Inside 'Class' so we don't Need to use 'stup'.
+        std::cout << "********************************************\n";
+        std::cout << "Company Name: " << CompanyName <<std::endl;
+        std::cout << "Founded By: "<< OwnerName <<std::endl;
+        std::cout << "Total Investment Recieved Till date: " <<Investment << " Million"<<std::endl;
+        std::cout << "Enter Your Company Employement Capacity: ";
+        std::cin >> Employee;
+        std::cout << "Total Employeement Capacity: " << Employee << std::endl;
+        std::cout << "Below are the areas Which Our Business is functioning.\n";
+        for(std::string title: BusinessFunction){
+            std::cout << title <<std::endl;
+        }
+        std::cout<< "****************************************************\n";
+
+    }
+    // Now we Create Methods To Access The data in Class Which is Private.
+    void funding(){
+        Investment++; //Using Increment Operator
+    }
+    void Loss(){
+        if(Investment > 0){
+        Investment--;
+        }
+        else{
+            std::cout << "The Company Is Currently Facing Financial Struggle, where they are in losses\n";
+        }
+    }
+    void Domain(std::string title){
+        BusinessFunction.push_back(title);
+
+    }
+};
+
+/*Below Our Unicorn Class will 'Inherit' Startup Class, That means that My Unicorn will
+have everything what My Startup Class had. 'Public' Modifier states that,
+whatever are in public in above can be accessed.*/
+
+//(Derived Class)                 //(This is Called Base Class)
+class Unicorn            :             public Startup{
+    // Constructor will recieve three values.
+ public:   
+    Unicorn(std::string companyname, std::string ownername,int investment): 
+    Startup(companyname,ownername,investment){
+
+    }
+    // Now we Can Create Own Methods For this Class.
+
+    void growth(){
+        std::cout <<"Gradually Increasing The Comapny Future\n";
+    }
+    void employement(){
+        if(Employee > 0 && Employee <= 100){
+            std::cout << "Its a Startup Company with Employement Capacity of: " << Employee;
+        }
+        else if(Employee > 100 && Employee <= 1000){
+            std::cout <<"Its Small Scale Industry with Employement Capacity of: " << Employee;
+        }
+        else if(Employee > 1000){
+            std::cout <<"Its a Large Scale Industry with Employement Capacity of: "<< Employee;
+        }
+    }
+
+};
+
+int main(){
+    Unicorn Unistup("Damasmart","Mithun Dama",0);
+    Unistup.employement();
+    Unistup.employement();
+    Unistup.employement();
+    Unistup.growth();
+    Unistup.funding();
+    Unistup.getinfo();
+
+    Unicorn Unistup1("App2Shop","Bharath",0);
+    Unistup1.funding();
+    Unistup1.funding();
+    Unistup1.funding();
+    Unistup1.funding();
+    Unistup1.getinfo();
+    Unistup1.growth();
+
+    return 0;
+}
+
+```
+
 ---
 
 ### Dynamic Binding
