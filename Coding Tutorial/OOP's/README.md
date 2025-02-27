@@ -126,6 +126,88 @@ int main(){
 }
 
 ```
+---
+### Constructor:
+
+```cpp
+#include <iostream>
+#include<list>
+
+
+class Startup {
+    public:
+    std::string CompanyName;
+    std::string OwnerName;
+    int Investment;
+    std::list<std::string> BusinessFunction;
+
+    // Two Rules For Constructor:
+    // 1. Constructore Doesn't have Return type.
+    // 2. Constructor Name will be same as Class Name.
+
+// Constructor with three arguments or Parameters
+    Startup(std::string companyname, std::string ownername, int investment){
+        CompanyName = companyname;
+        OwnerName = ownername;
+        Investment  = investment;
+    }
+
+    // Instead of Repeating Our Execution We Can Use Class Methods.
+    // Below I ma Using an FUnction to execute my code
+
+    void getinfo(){
+        // Here we are Inside 'Class' so we don't Need to use 'stup'.
+        std::cout << "Company Name: " << CompanyName <<std::endl;
+        std::cout << "Founded By: "<< OwnerName <<std::endl;
+        std::cout << "Total Investment Recieved Till date: " <<Investment << std::endl;
+        std::cout << "********************************************\n";
+        std::cout << "Below are the areas Which Our Business is functioning.\n";
+        for(std::string title: BusinessFunction){
+            std::cout << title <<std::endl;
+        }
+        std::cout<< "****************************************************\n";
+
+    }
+
+};
+
+int main(){
+
+    // Passing Constructor Arguments here
+    Startup stup("Damasmart","Mithun Dama",100000);
+    // To add Couple Of Videos Here which is a list<string> data Type, we can do like this:
+    stup.BusinessFunction.push_back("Food Delivery");
+    stup.BusinessFunction.push_back("Groceries Delivery");
+    stup.BusinessFunction.push_back("Vegetables Delivery");
+    // We are Invoking Our above function.
+    stup.getinfo();
+
+    Startup stup1("2b2c","Kowshik",10000);
+    stup1.BusinessFunction = {"Food","Startup","Groceries"};
+    stup.BusinessFunction.push_back("Food Delivery");
+    stup.BusinessFunction.push_back("Groceries Delivery");
+    stup.BusinessFunction.push_back("Stationary Delivery");
+    stup1.getinfo();
+
+    Startup stup2("App2Shop","Bharath Dama",1000);
+    stup.BusinessFunction.push_back("Food Delivery");
+    stup.BusinessFunction.push_back("Groceries Delivery");
+    stup2.getinfo();
+
+    Startup stup3("LotusBM","Brahma Anna",100);
+    stup3.BusinessFunction.push_back("Beverages Manufacturing");
+    stup3.getinfo();
+
+    Startup stup4("MyCan","Teja Akka",10);
+    stup4.BusinessFunction.push_back("Beverages Manufacturing");
+    stup4.BusinessFunction.push_back("Groceries Manufacturing");
+    stup4.getinfo();
+
+    return 0;
+}
+
+```
+
 
 ---
 
