@@ -218,6 +218,127 @@ In normal terms, Encapsulation is defined as wrapping up data and information un
 
 Encapsulation also leads to data abstraction or data hiding. Using encapsulation also hides the data. In the above example, the data of any of the sections like sales, finance, or accounts are hidden from any other section.
 
+**My Version**
+
+```cpp
+#include <iostream>
+#include<list>
+
+// Encapsulation:
+/*
+1. Encapsulation states that above attributes in Class should not be in public.
+      This should be Private.
+2. The way To Change the value to data that you stored inside this properties,
+    should be using Public methods.
+3. And You Give Access To Those public Methods, To Your user.
+4. And Using Those Public methods, by Obeying rules your user can change the values in class.
+*/
+
+
+class Startup {
+    private:
+    std::string CompanyName;
+    std::string OwnerName;
+    int Investment;
+    std::list<std::string> BusinessFunction;
+
+    // Two Rules For Constructor:
+    // 1. Constructore Doesn't have Return type.
+    // 2. Constructor Name will be same as Class Name.
+
+// Constructor with three arguments or Parameters
+// Below Can Be Public:
+public:
+    Startup(std::string companyname, std::string ownername, int investment){
+        CompanyName = companyname;
+        OwnerName = ownername;
+        Investment  = investment;
+    }
+
+    // Instead of Repeating Our Execution We Can Use Class Methods.
+    // Below I ma Using an FUnction to execute my code
+
+    void getinfo(){
+        // Here we are Inside 'Class' so we don't Need to use 'stup'.
+        std::cout << "Company Name: " << CompanyName <<std::endl;
+        std::cout << "Founded By: "<< OwnerName <<std::endl;
+        std::cout << "Total Investment Recieved Till date: " <<Investment << " Millions"<<std::endl;
+        std::cout << "********************************************\n";
+        std::cout << "Below are the areas Which Our Business is functioning.\n";
+        for(std::string title: BusinessFunction){
+            std::cout << title <<std::endl;
+        }
+        std::cout<< "****************************************************\n";
+
+    }
+    // Now we Create Methods To Access The data in Class Which is Private.
+    void funding(){
+        Investment++; //Using Increment Operator
+    }
+    void Loss(){
+        if(Investment > 0){
+        Investment--;
+        }
+        else{
+            std::cout << "The Company Is Currently Facing Financial Struggle, where they are in losses\n";
+        }
+    }
+    void Domain(std::string title){
+        BusinessFunction.push_back(title);
+
+    }
+};
+
+int main(){
+
+    // Passing Constructor Arguments here
+    Startup stup("Damasmart","Mithun Dama",0);
+    // To add Couple Of Videos Here which is a list<string> data Type, we can do like this:
+    stup.Domain("Food Delivery");
+    stup.Domain("Groceries Delivery");
+    stup.Domain("Vegetables Delivery");
+    // We are Invoking Our above function.
+    stup.funding();
+    stup.funding();
+    stup.funding();
+    stup.funding();
+    stup.funding();
+    stup.getinfo();
+
+    Startup stup1("2b2c","Kowshik",0);
+    stup1.Domain("Food Delivery");
+    stup1.Domain("Groceries Delivery");
+    stup1.Domain("Stationary Delivery");
+    stup1.funding();
+    stup1.funding();
+    stup1.Loss();
+    stup1.getinfo();
+
+    Startup stup2("App2Shop","Bharath Dama",0);
+    stup2.Domain("Food Delivery");
+    stup2.Domain("Groceries Delivery");
+    stup2.Loss();
+    stup2.getinfo();
+
+    Startup stup3("LotusBM","Brahma Anna",0);
+    stup3.Domain("Beverages Manufacturing");
+    stup3.Loss();
+    stup3.funding();
+    stup3.getinfo();
+
+    Startup stup4("MyCan","Teja Akka",0);
+    stup4.Domain("Beverages Manufacturing");
+    stup4.Domain("Groceries Manufacturing");
+    stup4.Loss();
+    stup4.Loss();
+    stup4.Loss();
+    stup4.getinfo();
+
+    return 0;
+}
+
+```
+
 ---
 
 ### Abstraction:
