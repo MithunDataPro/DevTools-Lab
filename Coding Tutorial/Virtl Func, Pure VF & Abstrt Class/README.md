@@ -73,3 +73,42 @@ An abstract class is a class that has at least one pure virtual function. It can
 - ✅ Cannot be instantiated directly.
 - ✅ Used as a base class for derived classes.
 - ✅ Can have regular (non-virtual) functions as well.
+
+##### My Version:
+```cpp
+
+// Pure Virtual Function:
+#include <iostream>
+// This Class has become an Abstract Class.
+// Abstract Class: It Should Have atleast one pure virtual Function.
+class School{
+    public:
+    // Pure Virtual Function
+    virtual void Syllabus() = 0;
+        // std::cout << "School has 6 Subjects with 0 Labs...." << std::endl;
+};
+class College : public School{
+    public:
+    void Syllabus(){
+        std::cout << "College has 7 Subjects with 6 Labs..." << std::endl;
+    }
+};
+class Intermediate: public School{
+    public:
+    void Syllabus(){
+        std::cout << "Intermediate has Just 5 Subjects with 2 Labs..." << std::endl;
+    }
+
+};
+int main(){
+// So Now it will execute the most derieved version.
+// Base Class Pointed 
+    School* child = new College();
+    child ->Syllabus();
+
+    School* adult = new Intermediate();
+    adult->Syllabus();
+    return 0;
+}
+
+```
